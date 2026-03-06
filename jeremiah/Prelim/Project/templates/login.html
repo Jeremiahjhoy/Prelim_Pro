@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,hwb(358 1% 5% / 0.986),#f9039f);
+}
+
+/* Card */
+
+.login-card{
+width:380px;
+padding:40px;
+border-radius:15px;
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+box-shadow:0 8px 32px rgba(0,0,0,0.25);
+color:white;
+}
+
+.login-card h2{
+text-align:center;
+margin-bottom:30px;
+font-weight:600;
+}
+
+/* Input group */
+
+.input-group{
+position:relative;
+margin-bottom:20px;
+}
+
+.input-group i{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+color:#ddd;
+}
+
+.input-group input{
+width:100%;
+padding:12px 12px 12px 40px;
+border:none;
+outline:none;
+border-radius:8px;
+background:rgba(255,255,255,0.2);
+color:white;
+font-size:14px;
+}
+
+.input-group input::placeholder{
+color:#eee;
+}
+
+/* Button */
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#fff;
+color:#333;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#0db1db;
+}
+
+/* Footer */
+
+.footer{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+color:#0adc8bd4;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-card">
+
+<h2>Login</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<div class="input-group">
+<i class="fa fa-user"></i>
+{{ form.username }}
+</div>
+
+<div class="input-group">
+<i class="fa fa-lock"></i>
+{{ form.password }}
+</div>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="footer">
+<p>Secure Admin Access</p>
+</div>
+
+</div>
+
+</body>
+</html>
